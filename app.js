@@ -101,6 +101,10 @@ $("#shootButton").click(function(){
     $("#randomNumber").text("0"+randomNumber);
     else
     $("#randomNumber").text(randomNumber);
+     
+    let index = storedCells.indexOf(randomNumber);
+    storedCells.splice(index,1);
+    console.log(storedCells);
 })
 
 
