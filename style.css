@@ -104,9 +104,22 @@ th{
 }
 
 #shootButton{
+  background-color: #75DA8B;
+  color: #10A881;
+  margin-top: 10%;
+  font-size: 2em;
   animation: wiggle .5s infinite;
   transform: translateY(5px);
+  margin-left: 37%;
 }
+
+#randomNumber{
+color: #75DA8B;
+font-size: 15em;
+margin-left: 18%;
+}
+
+
 #shootButton:hover{
   animation: shadow-pulse 1s infinite;
 }

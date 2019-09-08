@@ -1,4 +1,4 @@
-var storedCells = [];
+let storedCells = [];
 // Save references to some individual <td> nodes
 let tableElement = document.getElementById("tab");
 
@@ -34,6 +34,9 @@ $("#button1").click(function(){
 Array.prototype.randomElement = function () {
     return this[Math.floor(Math.random() * storedCells.length)]
 }
+
+
+
 
 $("#shootButton").click(function(){
     console.log(storedCells.randomElement());
