@@ -30,6 +30,7 @@ $("#button1").click(function(){
     storedCells.push(tableElement.rows[5].cells[3].innerText);
     storedCells.push(tableElement.rows[5].cells[4].innerText);
     console.log(storedCells);
+    timer();
     document.getElementById("button1").innerHTML='Bingo';
     count++;
     }
@@ -56,10 +57,9 @@ $("#shootButton").click(function(){
     console.log(storedCells.randomElement());
 })
 
-let h = document.getElementsByClassName('hours')[0];
-    let m = document.getElementById('minute');
-    let s = document.getElementById('second');
-
+    let h = document.getElementById('minutes')
+    let m = document.getElementById('seconds');
+    let s = document.getElementById('milliSeconds');
     let seconds = 0, minutes = 0, hours = 0;
     let t;
 
@@ -80,6 +80,7 @@ function add() {
 
     timer();
 }
+
 function timer() {
     t = setTimeout(add, 10);
 }
