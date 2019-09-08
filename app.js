@@ -1,8 +1,9 @@
 let storedCells = [];
 // Save references to some individual <td> nodes
 let tableElement = document.getElementById("tab");
-
+let count = 1;
 $("#button1").click(function(){
+    if(count === 1){
     storedCells.push(tableElement.rows[1].cells[0].innerText);
     storedCells.push(tableElement.rows[1].cells[1].innerText);
     storedCells.push(tableElement.rows[1].cells[2].innerText);
@@ -29,6 +30,19 @@ $("#button1").click(function(){
     storedCells.push(tableElement.rows[5].cells[3].innerText);
     storedCells.push(tableElement.rows[5].cells[4].innerText);
     console.log(storedCells);
+    document.getElementById("button1").innerHTML='Bingo';
+    count++;
+    }
+    else if(count === 2){
+    document.getElementById("button1").innerHTML='New Game';
+    count++;
+    }
+    else
+    { 
+    storedCells.length = 0;
+    document.getElementById("button1").innerHTML='Start'; 
+    count = 1;
+    }
     
 })
 Array.prototype.randomElement = function () {
@@ -41,3 +55,31 @@ Array.prototype.randomElement = function () {
 $("#shootButton").click(function(){
     console.log(storedCells.randomElement());
 })
+
+let h = document.getElementsByClassName('hours')[0];
+    let m = document.getElementById('minute');
+    let s = document.getElementById('second');
+
+    let seconds = 0, minutes = 0, hours = 0;
+    let t;
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    
+    h.textContent = hours ? (hours > 9 ? hours : "0" + hours) : "00";
+    m.textContent = minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00";
+    s.textContent = seconds > 9 ? seconds : "0" + seconds;
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 10);
+}

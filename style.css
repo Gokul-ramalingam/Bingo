@@ -29,8 +29,9 @@ th{
 }
 
 #button1{
-    margin-left: 44%;
+    margin-left: 35%;
     padding:2% 5% 2% 5%;
+    width: 30%;
     
 }
 
@@ -61,7 +62,7 @@ th{
 
 #minutes{
   margin-top: 5%;
-  margin-left: 20%;
+  margin-left: 25%;
   font-size: 2em;
   position: absolute;
   background-color: #75DA8B;
@@ -73,7 +74,7 @@ th{
 
 #seconds{
   margin-top: 5%;
-  margin-left: 40%;
+  margin-left: 45%;
   font-size: 2em;
   position: absolute;
   color: #10A881;
@@ -85,7 +86,7 @@ th{
 
 #milliSeconds{
   margin-top: 5%;
-  margin-left: 60%;
+  margin-left: 65%;
   font-size: 2em;
   position: absolute;
   color: #10A881;
