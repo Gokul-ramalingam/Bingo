@@ -34,11 +34,6 @@ t = setTimeout(add, 15);
 }
 
 
-
-
-
-
-
 $("#button1").click(function(){
     if(count === 1){
     storedCells.push(tableElement.rows[1].cells[0].innerText);
@@ -72,12 +67,14 @@ $("#button1").click(function(){
     count++;
     }
     else if(count === 2){
+    $("#randomNumber").text("00");
     document.getElementById("button1").innerHTML='New Game';
     count++;
     clearTimeout(t);
     }
     else
     { 
+    $("#randomNumber").text("00");
     storedCells.length = 0;
     h.textContent = "00";
     m.textContent = "00";
@@ -105,6 +102,17 @@ $("#shootButton").click(function(){
     let index = storedCells.indexOf(randomNumber);
     storedCells.splice(index,1);
     console.log(storedCells);
+
+    for(let i = 1;i <= 5;i++)
+    {
+        for(let j = 0;j < 5;j++)
+        {
+            if(tableElement.rows[i].cells[j].innerText == randomNumber)
+            {
+                tableElement.rows[i].cells[j].style.color = '#10A881';
+            }
+        }
+    }
 })
 
 
