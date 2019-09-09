@@ -5,9 +5,9 @@ let count = 1;
 
 
 
-let h = document.getElementById('minutes')
-let m = document.getElementById('seconds');
-let s = document.getElementById('milliSeconds');
+let h = $('#minutes')
+let m = $('#seconds');
+let s = $('#milliSeconds');
 let seconds = 0, minutes = 0, hours = 0;
 let t;
 
