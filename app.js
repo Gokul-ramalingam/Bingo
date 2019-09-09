@@ -1,6 +1,6 @@
 let storedCells = [];
 // Save references to some individual <td> nodes
-let tableElement = document.getElementById("tab");
+let tableElement = $('#tab');
 let count = 1;
 
 
@@ -36,39 +36,22 @@ t = setTimeout(add, 15);
 
 $("#button1").click(function(){
     if(count === 1){
-    storedCells.push(tableElement.rows[1].cells[0].innerText);
-    storedCells.push(tableElement.rows[1].cells[1].innerText);
-    storedCells.push(tableElement.rows[1].cells[2].innerText);
-    storedCells.push(tableElement.rows[1].cells[3].innerText);
-    storedCells.push(tableElement.rows[1].cells[4].innerText);
-    storedCells.push(tableElement.rows[2].cells[0].innerText);
-    storedCells.push(tableElement.rows[2].cells[1].innerText);
-    storedCells.push(tableElement.rows[2].cells[2].innerText);
-    storedCells.push(tableElement.rows[2].cells[3].innerText);
-    storedCells.push(tableElement.rows[2].cells[4].innerText);
-    storedCells.push(tableElement.rows[3].cells[0].innerText);
-    storedCells.push(tableElement.rows[3].cells[1].innerText);
-    storedCells.push(tableElement.rows[3].cells[2].innerText);
-    storedCells.push(tableElement.rows[3].cells[3].innerText);
-    storedCells.push(tableElement.rows[3].cells[4].innerText);
-    storedCells.push(tableElement.rows[4].cells[0].innerText);
-    storedCells.push(tableElement.rows[4].cells[1].innerText);
-    storedCells.push(tableElement.rows[4].cells[2].innerText);
-    storedCells.push(tableElement.rows[4].cells[3].innerText);
-    storedCells.push(tableElement.rows[4].cells[4].innerText);
-    storedCells.push(tableElement.rows[5].cells[0].innerText);
-    storedCells.push(tableElement.rows[5].cells[1].innerText);
-    storedCells.push(tableElement.rows[5].cells[2].innerText);
-    storedCells.push(tableElement.rows[5].cells[3].innerText);
-    storedCells.push(tableElement.rows[5].cells[4].innerText);
-    console.log(storedCells);
+        for(let i = 1;i <= 5;i++)
+        {
+            for(let j = 0;j < 5;j++)
+            {
+                storedCells.push(tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').text());
+            }
+        }
+
+    
     timer();
-    document.getElementById("button1").innerHTML='Bingo';
+    $("#button1").html('Bingo');
     count++;
     }
     else if(count === 2){
     $("#randomNumber").text("00");
-    document.getElementById("button1").innerHTML='New Game';
+    $("#button1").html('New Game');
     count++;
     clearTimeout(t);
     }
@@ -80,7 +63,17 @@ $("#button1").click(function(){
     m.textContent = "00";
     s.textContent = "00";
     seconds = 0; minutes = 0; hours = 0;
-    document.getElementById("button1").innerHTML='Start'; 
+    $("#button1").html('Start'); 
+    for(let i = 1;i <= 5;i++)
+    {
+        for(let j = 0;j < 5;j++)
+        {
+            if(tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').text() == randomNumber)
+            {
+                tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').css('color', '#000000');
+            }
+        }
+    }
     count = 1;
     }
     
@@ -107,9 +100,9 @@ $("#shootButton").click(function(){
     {
         for(let j = 0;j < 5;j++)
         {
-            if(tableElement.rows[i].cells[j].innerText == randomNumber)
+            if(tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').text() == randomNumber)
             {
-                tableElement.rows[i].cells[j].style.color = '#10A881';
+                tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').css('color', '#10A881');
             }
         }
     }
