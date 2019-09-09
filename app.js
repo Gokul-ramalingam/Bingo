@@ -68,10 +68,9 @@ $("#button1").click(function(){
     {
         for(let j = 0;j < 5;j++)
         {
-            if(tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').text() == randomNumber)
-            {
+
+                console.log('Here')
                 tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').css('color', '#000000');
-            }
         }
     }
     count = 1;
@@ -95,7 +94,6 @@ $("#shootButton").click(function(){
     let index = storedCells.indexOf(randomNumber);
     storedCells.splice(index,1);
     console.log(storedCells);
-
     for(let i = 1;i <= 5;i++)
     {
         for(let j = 0;j < 5;j++)
