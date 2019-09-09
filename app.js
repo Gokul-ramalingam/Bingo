@@ -22,9 +22,9 @@ if (seconds >= 60) {
     }
 }
 
-h.textContent = hours ? (hours > 9 ? hours : "0" + hours) : "00";
-m.textContent = minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00";
-s.textContent = seconds > 9 ? seconds : "0" + seconds;
+h.text(hours ? (hours > 9 ? hours : "0" + hours) : "00");
+m.text(minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00");
+s.text(textContent = seconds > 9 ? seconds : "0" + seconds);
 
 timer();
 }
@@ -59,9 +59,9 @@ $("#button1").click(function(){
     { 
     $("#randomNumber").text("00");
     storedCells.length = 0;
-    h.textContent = "00";
-    m.textContent = "00";
-    s.textContent = "00";
+    h.text("00");
+    m.text("00");
+    s.text("00");
     seconds = 0; minutes = 0; hours = 0;
     $("#button1").html('Start'); 
     for(let i = 1;i <= 5;i++)
@@ -69,7 +69,6 @@ $("#button1").click(function(){
         for(let j = 0;j < 5;j++)
         {
 
-                console.log('Here')
                 tableElement.find('tr:eq('+ i + ')').find('td:eq(' + j + ')').css('color', '#000000');
         }
     }
